@@ -69,6 +69,11 @@
         font-size: 24px;
         left: 4%;
         right: 45%;
+        top: 20%;
+    }
+
+    .Banner-container {
+        height: 111px;
     }
 
     .Home-main {
