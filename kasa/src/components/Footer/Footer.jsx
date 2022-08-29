@@ -20,7 +20,7 @@ const Kasa = (props) => (
 
 function Footer() {
   return (
-    <div class="container d-flex flex-column align-items-center justify-content-around bg-dark text-light">
+    <div class="d-flex flex-column align-items-center justify-content-around bg-dark text-light footer">
       <div className="Logo-Footer mt-2 mb-2">
         <Kasa />
       </div>

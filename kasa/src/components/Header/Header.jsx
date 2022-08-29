@@ -1,10 +1,8 @@
-import logo from '../../assets/LOGO.svg'
 import { Link } from 'react-router-dom'
 import './header.css'
 import styled from 'styled-components'
 
 const LinkHeader = styled(Link)`
-  margin: 20px;
   color: #ff6060;
 `
 
