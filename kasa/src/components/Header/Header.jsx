@@ -1,10 +1,5 @@
 import { Link } from 'react-router-dom'
 import './header.css'
-import styled from 'styled-components'
-
-const LinkHeader = styled(Link)`
-  color: #ff6060;
-`
 
 const Kasa = (props) => (
   <svg
@@ -26,14 +21,12 @@ const Kasa = (props) => (
 function Header() {
   return (
     <nav className="NavContainer">
-      <LinkHeader to="/">
+      <Link to="/">
         <Kasa />
-      </LinkHeader>
-      <div className="LinkHeader">
-        <LinkHeader to="/Accueil" className="Accueil">
-          Accueil
-        </LinkHeader>
-        <LinkHeader to="/A_Propos">A Propos</LinkHeader>
+      </Link>
+      <div>
+        <Link to="/">Accueil</Link>
+        <Link to="/A_Propos">A Propos</Link>
       </div>
     </nav>
   )

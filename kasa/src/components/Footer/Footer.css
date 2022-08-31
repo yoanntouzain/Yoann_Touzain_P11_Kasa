@@ -1,10 +1,22 @@
-.footer {
+.Footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+    background: black;
+    color: white;
 }
 
-.text-Footer {
+.Footer-Logo {
+    margin-top: 64px;
+    margin-bottom: 28px;
+}
+
+.Footer-text {
     font-size: 24px;
     margin-bottom: 29px;
+    text-align: center;
 }
