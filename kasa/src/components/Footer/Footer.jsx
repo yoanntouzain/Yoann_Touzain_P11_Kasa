@@ -1,5 +1,4 @@
-import './Footer.css'
-// import styled from 'styled-components'
+import './footer.css'
 
 const Kasa = (props) => (
   <svg
@@ -20,11 +19,11 @@ const Kasa = (props) => (
 
 function Footer() {
   return (
-    <div class="d-flex flex-column align-items-center justify-content-around bg-dark text-light footer">
-      <div className="Logo-Footer mt-2 mb-2">
+    <div className="Footer">
+      <div className="Footer-Logo">
         <Kasa />
       </div>
-      <p class="text-Footer">© 2020 Kasa. All rights reserved</p>
+      <p className="Footer-text">© 2020 Kasa. All rights reserved</p>
     </div>
   )
 }
