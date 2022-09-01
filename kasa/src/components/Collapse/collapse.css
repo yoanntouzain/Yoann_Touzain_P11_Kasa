@@ -1,0 +1,31 @@
+.collapse-content {
+    display: flex;
+    margin-left: 208.5px;
+    margin-right: 208.5px;
+    height: 47px;
+    border-radius: 5px;
+    background: #FF6060;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 19px;
+    padding-right: 16px;
+    margin-bottom: 31px;
+}
+
+.collapse-content h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.collapse-content svg {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.collapse {
+    transform: rotate(180deg);
+}
+
+.collapse-rotate {
+    transform: rotate(0deg);
+}

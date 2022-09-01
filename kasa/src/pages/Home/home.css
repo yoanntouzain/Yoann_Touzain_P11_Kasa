@@ -2,22 +2,6 @@
     margin: auto 100px auto 100px;
 }
 
-.Banner-title {
-    position: absolute;
-    color: red;
-    /* margin-top: 7%;
-    left: 30%; */
-    /* bottom: 30%; */
-    left: 26%;
-    right: 26%;
-    top: 35%;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-    margin-top: 0%;
-    margin-bottom: 0%;
-}
 
 .Home-main {
     background: #F6F6F6;
