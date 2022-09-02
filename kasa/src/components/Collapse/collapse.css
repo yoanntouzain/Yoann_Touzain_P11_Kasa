@@ -1,7 +1,10 @@
-.collapse-content {
+.collapse-container {
+    padding-left: 208.5px;
+    padding-right: 208.5px;
+}
+
+.collapse-header {
     display: flex;
-    margin-left: 208.5px;
-    margin-right: 208.5px;
     height: 47px;
     border-radius: 5px;
     background: #FF6060;
@@ -9,23 +12,103 @@
     justify-content: space-between;
     padding-left: 19px;
     padding-right: 16px;
-    margin-bottom: 31px;
+    /* margin-bottom: 31px; */
 }
 
-.collapse-content h2 {
+.collapse-header h2 {
     font-size: 24px;
     font-weight: 500;
 }
 
-.collapse-content svg {
+.collapse-header svg {
     font-size: 24px;
     font-weight: 500;
 }
 
-.collapse {
+.collapse-noRotate {
+    animation-name: noRotate;
+    animation-duration: 0.5s;
     transform: rotate(180deg);
 }
 
 .collapse-rotate {
+    animation-name: rotate;
+    animation-duration: 0.5s;
     transform: rotate(0deg);
+}
+
+.collapse-content {
+    background: #F6F6F6;
+    color: #FF6060;
+    margin-bottom: 31px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 27px 27px 19px 18px;
+}
+
+.d-none {
+    animation-name: d-none;
+    animation-duration: 0.5s;
+    opacity: 0;
+    display: none;
+}
+
+.d-flex {
+    animation-name: d-flex;
+    animation-duration: 0.5s;
+    opacity: 1;
+    display: flex;
+}
+
+.collapse-margin {
+    margin-bottom: 31px;
+}
+
+.collapse-noMargin {
+    margin-bottom: 0px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes noRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes d-none {
+    from {
+        display: flex;
+        opacity: 1;
+    }
+
+    to {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@keyframes d-flex {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    to {
+        display: flex;
+        opacity: 1;
+    }
 }
