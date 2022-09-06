@@ -11,6 +11,7 @@ import Home from './pages/Home/Home'
 import Header from './components/Header/Header'
 import About from './pages/About Us/About_Us'
 import Footer from './components/Footer/Footer'
+import Error from './pages/Error/Error'
 
 // const root = ReactDOM.createRoot(document.getElementById('root'))
 // root.render(
@@ -29,6 +30,7 @@ root.render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/A_Propos" element={<About />} />
+      <Route path="/error" element={<Error />} />
     </Routes>
     <Footer />
   </BrowserRouter>
