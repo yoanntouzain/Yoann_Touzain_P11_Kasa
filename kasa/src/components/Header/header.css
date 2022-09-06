@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0px 100px 63px 100px;
+    font-size: 24px;
 }
 
 .NavContainer a {
@@ -11,12 +12,16 @@
     text-decoration: none;
 }
 
+.NavContainer a svg {
+    fill: #ff6060;
+}
+
 .NavContainer a:focus {
     text-decoration: underline;
 }
 
 
-@media screen and (min-width: 320px) and (max-width: 415px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
     .NavContainer {
         margin: auto 20px 20px 20px;
         font-size: 12px;
@@ -29,5 +34,21 @@
     .NavContainer a svg {
         width: 145px;
         height: 47px;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+    .NavContainer {
+        margin: 0 18px 63px 25px;
+        font-size: 18px;
+    }
+
+    .NavContainer a {
+        margin: 10px 25px 10px 0;
+    }
+
+    .NavContainer a svg {
+        width: 177.5px;
+        height: 57.5px;
     }
 }
