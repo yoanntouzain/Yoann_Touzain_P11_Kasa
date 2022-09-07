@@ -21,23 +21,23 @@
 }
 
 .collapse-header svg {
-    font-size: 24px;
-    font-weight: 500;
+    width: 24px;
+    fill: white;
 }
 
-.collapse-noRotate {
+.collapse-container.open .vector {
     animation-name: noRotate;
     animation-duration: 0.5s;
     transform: rotate(180deg);
 }
 
-.collapse-rotate {
+.collapse-container:not(.open) .vector {
     animation-name: rotate;
     animation-duration: 0.5s;
     transform: rotate(0deg);
 }
 
-.collapse-content {
+.collapse-container.open .collapse-content {
     background: #F6F6F6;
     color: #FF6060;
     margin-bottom: 31px;
@@ -45,21 +45,19 @@
     font-size: 24px;
     font-weight: 400;
     padding: 27px 27px 19px 18px;
+    animation-name: d-flex;
+    animation-duration: 0.5s;
+    opacity: 1;
+    display: flex;
 }
 
-.d-none {
+.collapse-container:not(.open) .collapse-content {
     animation-name: d-none;
     animation-duration: 0.5s;
     opacity: 0;
     display: none;
 }
 
-.d-flex {
-    animation-name: d-flex;
-    animation-duration: 0.5s;
-    opacity: 1;
-    display: flex;
-}
 
 .collapse-margin {
     margin-bottom: 31px;
@@ -111,4 +109,51 @@
         display: flex;
         opacity: 1;
     }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .collapse-container {
+        padding-left: 0;
+        padding-right: 0;
+
+    }
+
+    .collapse-header h2 {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .collapse-header svg {
+        fill: white;
+        width: 13px;
+    }
+
+    .collapse-content {
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+    .collapse-container {
+        padding-left: 0;
+        padding-right: 0;
+
+    }
+
+    .collapse-header h2 {
+        font-size: 18.5px;
+        font-weight: 500;
+    }
+
+    .collapse-header svg {
+        fill: white;
+        width: 18.5px;
+    }
+
+    .collapse-content {
+        font-size: 17.5px;
+        font-weight: 400;
+    }
+
 }

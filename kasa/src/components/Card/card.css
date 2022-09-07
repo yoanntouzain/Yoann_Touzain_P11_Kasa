@@ -18,7 +18,23 @@
 .card-title {
     font-size: 18px;
     font-weight: 500;
-    width: 30%;
+    width: 80%;
     text-align: start;
-    margin-left: 20px;
+    margin: auto 0px auto 20px;
+    /* margin-left: 20px; */
+}
+
+.card-img {
+    border-radius: 10px 10px 0px 0px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.a {
+    height: 20%;
+}
+
+.b {
+    height: 80%;
 }

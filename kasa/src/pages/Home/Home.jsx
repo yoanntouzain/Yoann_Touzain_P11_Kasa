@@ -2,8 +2,21 @@ import './home.css'
 import Card from '../../components/Card/Card'
 
 import Banner from '../../components/Banner/Banner'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 function Home() {
+  const [location, setLocation] = useState([])
+
+  useEffect(() => {
+    async function getDatas() {
+      let result = await fetch('./logement.json')
+      let data = await result.json()
+      setLocation(data)
+    }
+    getDatas()
+  }, [])
+
   return (
     <div className="main">
       <Banner
@@ -12,7 +25,11 @@ function Home() {
         }
       />
       <div className="Home-main">
-        <Card />
+        <div className="container-card">
+          {location.map((loc) => (
+            <Card key={loc.id} location={loc} />
+          ))}
+        </div>
       </div>
     </div>
   )
