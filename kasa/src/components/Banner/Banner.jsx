@@ -6,7 +6,6 @@ export default function Banner(props) {
     <div className="Banner">
       <div className="Banner-container">
         <img src={banner} className="Banner-img" alt="Banner" />
-        <div className="Ombrage"></div>
         {props.element}
       </div>
     </div>

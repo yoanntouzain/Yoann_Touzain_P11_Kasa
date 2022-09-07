@@ -21,6 +21,7 @@
     /* mix-blend-mode: darken;
     background: black;
     opacity: 0.3;*/
+    filter: brightness(0.5);
 }
 
 .Banner-title {
@@ -35,11 +36,6 @@
     font-size: 48px;
     margin-top: 0%;
     margin-bottom: 0%;
-}
-
-.Ombrage {
-    width: 100%;
-    height: 223px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
@@ -57,11 +53,6 @@
     .Banner-container {
         height: 111px;
     }
-
-    .Ombrage {
-        width: 100%;
-        height: 111px;
-    }
 }
 
 @media screen and (min-width: 426px) and (max-width: 1024px) {
@@ -77,11 +68,6 @@
     }
 
     .Banner-container {
-        height: 167px;
-    }
-
-    .Ombrage {
-        width: 100%;
         height: 167px;
     }
 }

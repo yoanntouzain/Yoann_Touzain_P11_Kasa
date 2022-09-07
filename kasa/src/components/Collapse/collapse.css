@@ -25,19 +25,19 @@
     fill: white;
 }
 
-.collapse-noRotate {
+.collapse-container.open .vector {
     animation-name: noRotate;
     animation-duration: 0.5s;
     transform: rotate(180deg);
 }
 
-.collapse-rotate {
+.collapse-container:not(.open) .vector {
     animation-name: rotate;
     animation-duration: 0.5s;
     transform: rotate(0deg);
 }
 
-.collapse-content {
+.collapse-container.open .collapse-content {
     background: #F6F6F6;
     color: #FF6060;
     margin-bottom: 31px;
@@ -45,21 +45,19 @@
     font-size: 24px;
     font-weight: 400;
     padding: 27px 27px 19px 18px;
+    animation-name: d-flex;
+    animation-duration: 0.5s;
+    opacity: 1;
+    display: flex;
 }
 
-.d-none {
+.collapse-container:not(.open) .collapse-content {
     animation-name: d-none;
     animation-duration: 0.5s;
     opacity: 0;
     display: none;
 }
 
-.d-flex {
-    animation-name: d-flex;
-    animation-duration: 0.5s;
-    opacity: 1;
-    display: flex;
-}
 
 .collapse-margin {
     margin-bottom: 31px;

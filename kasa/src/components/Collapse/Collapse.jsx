@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './collapse.css'
 
 const Vector = (props) => (
@@ -13,35 +14,14 @@ const Vector = (props) => (
   </svg>
 )
 
-function openCollapse(e) {
-  const collapse = e.target.children[1]
-  const collapseContent = e.target.nextElementSibling
-  const collapseHeader = e.target
-
-  if (collapse.classList.contains('collapse-noRotate')) {
-    collapse.classList.remove('collapse-noRotate')
-    collapse.classList.add('collapse-rotate')
-    collapseContent.classList.add('d-none')
-    collapseContent.classList.remove('d-flex')
-    collapseHeader.classList.remove('collapse-noMargin')
-    collapseHeader.classList.add('collapse-margin')
-  } else {
-    collapse.classList.add('collapse-noRotate')
-    collapse.classList.remove('collapse-rotate')
-    collapseContent.classList.remove('d-none')
-    collapseContent.classList.add('d-flex')
-    collapseHeader.classList.add('collapse-noMargin')
-    collapseHeader.classList.remove('collapse-margin')
-  }
-}
-
 export default function Collapse(props) {
+  const [open, setOpen] = useState(false)
   return (
-    <div className="collapse-container">
+    <div className={`collapse-container ${open ? 'open' : ''}`}>
       <div
         className="collapse-header collapse-margin"
         type="button"
-        onClick={openCollapse}
+        onClick={() => setOpen(!open)}
       >
         {props.title}
         <Vector rotate={props.rotate} />

@@ -13,16 +13,6 @@ import About from './pages/About Us/About_Us'
 import Footer from './components/Footer/Footer'
 import Error from './pages/Error/Error'
 
-// const root = ReactDOM.createRoot(document.getElementById('root'))
-// root.render(
-//   <React.StrictMode>
-//     <Router>
-//       <Header />
-//       <Home />
-//     </Router>
-//   </React.StrictMode>
-// )
-
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <BrowserRouter>

@@ -1,30 +1,18 @@
 import './card.css'
+import React from 'react'
 
-function Card() {
+function Card({ location }) {
   return (
-    <div className="container-card">
+    <>
       <div className="card">
-        <p className="card-title">Titre de la location</p>
+        <div className="a">
+          <p className="card-title">{location.title}</p>
+        </div>
+        <div className="b">
+          <img className="card-img" src={location.pictures[0]} alt="image" />
+        </div>
       </div>
-      <div className="card">
-        <p className="card-title">Titre de la location</p>
-      </div>
-      <div className="card">
-        <p className="card-title">Titre de la location</p>
-      </div>
-      <div className="card">
-        <p className="card-title">Titre de la location</p>
-      </div>
-      <div className="card">
-        <p className="card-title">Titre de la location</p>
-      </div>
-      <div className="card">
-        <p className="card-title">Titre de la location</p>
-      </div>
-      <div className="card">
-        <p className="card-title">Titre de la location</p>
-      </div>
-    </div>
+    </>
   )
 }
 
