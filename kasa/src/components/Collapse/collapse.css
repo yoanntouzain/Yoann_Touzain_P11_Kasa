@@ -1,4 +1,4 @@
-.collapse-container {
+.customs {
     padding-left: 208.5px;
     padding-right: 208.5px;
 }
@@ -59,11 +59,11 @@
 }
 
 
-.collapse-margin {
+.collapse-container:not(.open) .collapse-margin {
     margin-bottom: 31px;
 }
 
-.collapse-noMargin {
+.collapse-container.open .collapse-noMargin {
     margin-bottom: 0px;
 }
 

@@ -1,18 +1,19 @@
 import './card.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Card({ location }) {
   return (
-    <>
-      <div className="card">
-        <div className="a">
+    <Link to={'Accommodation/' + location.id} className="link-card">
+      <div className="card" id={location.id}>
+        <div className="card-top">
           <p className="card-title">{location.title}</p>
         </div>
-        <div className="b">
-          <img className="card-img" src={location.pictures[0]} alt="image" />
+        <div className="card-bottom">
+          <img className="card-img" src={location.cover} alt="logement" />
         </div>
       </div>
-    </>
+    </Link>
   )
 }
 
