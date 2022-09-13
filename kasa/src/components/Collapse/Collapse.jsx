@@ -14,10 +14,14 @@ const Vector = (props) => (
   </svg>
 )
 
-export default function Collapse(props) {
+function Collapse(props) {
   const [open, setOpen] = useState(false)
   return (
-    <div className={`collapse-container ${open ? 'open' : ''}`}>
+    <div
+      className={`collapse-container ${props.classNameContainer} ${
+        open ? 'open' : ''
+      }`}
+    >
       <div
         className="collapse-header collapse-margin"
         type="button"
@@ -26,7 +30,11 @@ export default function Collapse(props) {
         {props.title}
         <Vector rotate={props.rotate} />
       </div>
-      <div className="collapse-content d-none">{props.content}</div>
+      <div className={`collapse-content d-none ${props.classNameCustoms}`}>
+        {props.content}
+      </div>
     </div>
   )
 }
+
+export default Collapse

@@ -19,21 +19,25 @@ function AboutUs() {
     <div className="main">
       <Banner />
       <Collapse
+        classNameContainer="customs"
         rotate="Fiabilite"
         title={<h2 className="title">Fiabilité</h2>}
         content={valueFiabilite}
       />
       <Collapse
+        classNameContainer="customs"
         rotate="Respect"
         title={<h2 className="title">Respect</h2>}
         content={valueRespect}
       />
       <Collapse
+        classNameContainer="customs"
         rotate="Service"
         title={<h2 className="title">Service</h2>}
         content={valueService}
       />
       <Collapse
+        classNameContainer="customs"
         rotate="Responsabilite"
         title={<h2 className="title">Responsabilité</h2>}
         content={valueResponsabilite}

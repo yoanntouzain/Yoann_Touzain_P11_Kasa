@@ -2,8 +2,7 @@ import './home.css'
 import Card from '../../components/Card/Card'
 
 import Banner from '../../components/Banner/Banner'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 function Home() {
   const [location, setLocation] = useState([])

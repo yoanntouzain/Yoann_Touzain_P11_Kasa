@@ -1,0 +1,111 @@
+.container {
+    margin: auto 6.945%;
+}
+
+.main-accommodation {
+    display: flex;
+    flex-direction: column;
+    color: #FF6060;
+    margin-top: 30px;
+}
+
+.header-accommodation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logement-accommodation h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.city-accommodation h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 0%;
+}
+
+.tags-accommodation {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 23px;
+}
+
+.tag-accommodation {
+    margin-right: 10px;
+    background: #FF6060;
+    color: white;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.tags-accommodation p {
+    margin: 0;
+    padding: 3px 37px;
+}
+
+.fiche-accommodation {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    justify-content: space-around;
+}
+
+.identity-accommodation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.proprio-accommodation {
+    font-weight: 500;
+    font-size: 19px;
+    margin-right: 10px;
+    width: 45.23%;
+}
+
+.photo-accommodation {
+    background: #C4C4C4;
+    border-radius: 100%;
+    width: 52px;
+    height: 52px;
+}
+
+.ratings-accommodation {
+    margin-top: 24px;
+}
+
+.rating-accommodation svg {
+    margin-left: 10px;
+}
+
+.body-accommodation {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.description-accommodation {
+    width: 47.088%;
+}
+
+.equipment-accommodation {
+    width: 47.088%;
+}
+
+.collapse-content-accommodation {
+    height: 249px;
+}
+
+.collapse-content-accommodation p {
+    margin: 0;
+}
+
+.title-collapse-accommodation {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
