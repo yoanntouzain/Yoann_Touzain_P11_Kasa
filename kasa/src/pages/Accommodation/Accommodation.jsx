@@ -1,5 +1,7 @@
 import React from 'react'
-// import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+// import { useParams, redirect } from 'react-router-dom'
 import banner from '../../assets/Banniere.png'
 import Collapse from '../../components/Collapse/Collapse'
 import './accommodation.css'
@@ -17,8 +19,36 @@ const Star = (props) => (
 )
 
 function Accommodation() {
-  //   const params = useParams()
-  //   console.log(params)
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const [location, setLocation] = useState({})
+
+  useEffect(() => {
+    async function getDatas() {
+      let result = await fetch('/logement.json')
+      let data = await result.json()
+      data.find((element) => {
+        if (id === element.id) {
+          return setLocation(element)
+        }
+        // else {
+        //   console.log('id false')
+        //   return navigate('/')
+        //   return redirect('/')
+        // }
+      })
+    }
+    getDatas()
+  }, [id])
+
+  // useEffect(() => {
+  //   async function getDatas() {
+  //     let result = await fetch('/logement.json')
+  //     let data = await result.json()
+  //     setLocation(data.find((element) => element.id === id))
+  //   }
+  //   getDatas()
+  // }, [id])
 
   const valueDescription =
     "Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied). "
@@ -44,22 +74,19 @@ function Accommodation() {
           <div className="title-accommodation">
             <div className="location-accommodation">
               <div className="logement-accommodation">
-                <h1>Cozy loft on the Canal Saint-Martin</h1>
+                <h1>{location.title}</h1>
               </div>
               <div className="city-accommodation">
-                <h2>Paris, Île-de-France</h2>
+                <h2>{location.location}</h2>
               </div>
             </div>
 
             <div className="tags-accommodation">
               <div className="tag-accommodation">
-                <p>Cozy</p>
+                <p>{location.tags}</p>
               </div>
               <div className="tag-accommodation">
-                <p>Canal</p>
-              </div>
-              <div className="tag-accommodation">
-                <p>Paris 10</p>
+                <p>{location.tags}</p>
               </div>
             </div>
           </div>
