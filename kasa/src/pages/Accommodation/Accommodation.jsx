@@ -94,6 +94,12 @@ function Accommodation() {
             <Star fill="#FF6060" />
           </div>
         )
+      default:
+        return (
+          <div className="rating-accommodation">
+            <p>No ratings</p>
+          </div>
+        )
     }
   }
 
@@ -141,6 +147,7 @@ function Accommodation() {
           <div className="description-accommodation">
             <Collapse
               classNameContainer="collapse-container-accommodation"
+              classNameHeader="collapse-header-accommodation"
               classNameCustoms="collapse-content-accommodation"
               rotate="Description"
               title={
@@ -152,6 +159,7 @@ function Accommodation() {
           <div className="equipment-accommodation">
             <Collapse
               classNameContainer="collapse-container-accommodation"
+              classNameHeader="collapse-header-accommodation"
               classNameCustoms="collapse-content-accommodation"
               rotate="Équipements"
               title={

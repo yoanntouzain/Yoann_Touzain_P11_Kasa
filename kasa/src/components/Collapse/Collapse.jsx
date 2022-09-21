@@ -23,7 +23,7 @@ function Collapse(props) {
       }`}
     >
       <div
-        className="collapse-header collapse-margin"
+        className={`collapse-header collapse-margin ${props.classNameHeader}`}
         type="button"
         onClick={() => setOpen(!open)}
       >

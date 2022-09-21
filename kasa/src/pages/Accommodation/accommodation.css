@@ -115,3 +115,158 @@
     font-size: 18px;
     font-weight: 500;
 }
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .container {
+        margin: auto 20px;
+    }
+
+    .header-accommodation {
+        flex-wrap: wrap;
+    }
+
+    .fiche-accommodation {
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    .logement-accommodation h1 {
+        font-size: 18px;
+    }
+
+    .city-accommodation h2 {
+        font-size: 14px;
+    }
+
+    .tags-accommodation {
+        margin-top: 10px;
+        margin-bottom: 16px;
+    }
+
+    .tag-accommodation {
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+    .tag-accommodation p {
+        padding: 2px 20px;
+    }
+
+    .proprio-accommodation {
+        font-size: 12px;
+        width: 36.23%;
+    }
+
+    .photo-accommodation img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .ratings-accommodation {
+        margin-top: 8px;
+    }
+
+    .rating-accommodation svg {
+        margin-left: 5px;
+        width: 15px;
+    }
+
+    .body-accommodation {
+        flex-wrap: wrap;
+    }
+
+    .description-accommodation,
+    .equipment-accommodation {
+        width: 100%;
+    }
+
+    .collapse-container.open .collapse-content-accommodation {
+        padding-top: 23px;
+        height: fit-content;
+    }
+
+    .collapse-content-accommodation ul li,
+    .collapse-content-accommodation p {
+        font-size: 12px;
+    }
+
+    .collapse-header-accommodation {
+        height: 30px;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+    .container {
+        margin: auto 20px;
+    }
+
+    .header-accommodation {
+        flex-wrap: wrap;
+    }
+
+    .logement-accommodation h1 {
+        font-size: 27px;
+    }
+
+    .city-accommodation h2 {
+        font-size: 16px;
+    }
+
+    .tags-accommodation {
+        margin-top: 10px;
+        margin-bottom: 16px;
+    }
+
+    .tag-accommodation {
+        font-size: 12px;
+        border-radius: 5px;
+    }
+
+    .tag-accommodation p {
+        padding: 2px 20px;
+    }
+
+    .proprio-accommodation {
+        font-size: 12px;
+        width: 41.23%;
+    }
+
+    .photo-accommodation img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .ratings-accommodation {
+        margin-top: 8px;
+    }
+
+    .rating-accommodation svg {
+        margin-left: 5px;
+        width: 15px;
+    }
+
+    .body-accommodation {
+        flex-wrap: wrap;
+    }
+
+    .description-accommodation,
+    .equipment-accommodation {
+        width: 100%;
+    }
+
+    .collapse-container.open .collapse-content-accommodation {
+        padding-top: 23px;
+        height: fit-content;
+    }
+
+    .collapse-content-accommodation ul li,
+    .collapse-content-accommodation p {
+        font-size: 12px;
+    }
+
+    .collapse-header-accommodation {
+        height: 30px;
+    }
+}

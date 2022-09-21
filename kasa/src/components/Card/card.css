@@ -26,7 +26,6 @@
     width: 80%;
     text-align: start;
     margin: 5px 0px auto 20px;
-    /* margin-left: 20px; */
 }
 
 .card-img {
@@ -43,3 +42,27 @@
 .card-bottom {
     height: 80%;
 }
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .card {
+        display: flex;
+        flex-direction: column-reverse;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+        border-radius: 10px;
+        width: 335px;
+        /* width: 335px; */
+        height: 255px;
+        /* height: 255px; */
+        margin: auto 0px 50px 0px;
+    }
+
+    .card-top {
+        height: 26%;
+    }
+
+    .card-bottom {
+        height: 75%;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {}

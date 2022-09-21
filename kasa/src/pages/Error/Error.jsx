@@ -3,7 +3,7 @@ import './error.css'
 
 export default function Error() {
   return (
-    <div className="main">
+    <div className="main-error">
       <div className="container-error">
         <div className="container-title">
           <h1 className="title-error">404</h1>
