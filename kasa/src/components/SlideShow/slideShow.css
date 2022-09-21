@@ -1,0 +1,52 @@
+.container-carousel {
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.picture-slide {
+    max-width: 100%;
+    display: none;
+    height: 415px;
+    border-radius: 25px;
+}
+
+img.active {
+    display: block;
+    height: 415px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+
+.cont-btn {
+    width: 100%;
+    height: auto;
+    border: 1px solid #000;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.btn-nav {
+    font-size: 50px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.left {
+    transform: rotate(180deg);
+}
+
+.right {
+    right: 0;
+}
+
+.left,
+.right {
+    display: flex;
+    height: fit-content;
+    position: absolute;
+    top: 40%;
+}

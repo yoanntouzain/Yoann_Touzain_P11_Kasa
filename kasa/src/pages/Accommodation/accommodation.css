@@ -67,12 +67,12 @@
     width: 45.23%;
 }
 
-.photo-accommodation {
-    background: #C4C4C4;
+.photo-accommodation img {
     border-radius: 100%;
     width: 52px;
     height: 52px;
 }
+
 
 .ratings-accommodation {
     margin-top: 24px;
@@ -100,8 +100,14 @@
     height: 249px;
 }
 
-.collapse-content-accommodation p {
+.collapse-content-accommodation p,
+.collapse-content-accommodation ul {
     margin: 0;
+    list-style-type: none;
+}
+
+.collapse-content-accommodation ul {
+    padding: 0;
 }
 
 .title-collapse-accommodation {

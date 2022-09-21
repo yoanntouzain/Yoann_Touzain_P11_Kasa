@@ -2,8 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 // import { useParams, redirect } from 'react-router-dom'
-import banner from '../../assets/Banniere.png'
 import Collapse from '../../components/Collapse/Collapse'
+import SlideShow from '../../components/SlideShow/SlideShow'
 import './accommodation.css'
 
 const Star = (props) => (
@@ -21,51 +21,31 @@ const Star = (props) => (
 function Accommodation() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [location, setLocation] = useState({})
+  const [location, setLocation] = useState({
+    tags: [],
+    pictures: [],
+    host: {},
+    equipments: [],
+  })
 
   useEffect(() => {
     async function getDatas() {
       let result = await fetch('/logement.json')
       let data = await result.json()
-      data.find((element) => {
-        if (id === element.id) {
-          return setLocation(element)
-        }
-        // else {
-        //   console.log('id false')
-        //   return navigate('/')
-        //   return redirect('/')
-        // }
-      })
+      let searchLocation = data.find((element) => element.id === id)
+      if (searchLocation !== undefined) {
+        setLocation(searchLocation)
+      } else {
+        navigate('/error')
+      }
     }
     getDatas()
-  }, [id])
-
-  // useEffect(() => {
-  //   async function getDatas() {
-  //     let result = await fetch('/logement.json')
-  //     let data = await result.json()
-  //     setLocation(data.find((element) => element.id === id))
-  //   }
-  //   getDatas()
-  // }, [id])
-
-  const valueDescription =
-    "Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied). "
-
-  const valueEquipement = `
-    Climatisation
-    Wi-Fi
-    Cuisine
-    Espace de travail
-    Fer à repasser
-    Sèche-cheveux
-    Cintres`
+  }, [id, navigate])
 
   return (
     <div className="container">
       <div className="slide-container">
-        <img src={banner} className="slideShow" alt="Slide Show" />
+        <SlideShow pictures={location.pictures} />
       </div>
 
       <div className="main-accommodation">
@@ -82,19 +62,20 @@ function Accommodation() {
             </div>
 
             <div className="tags-accommodation">
-              <div className="tag-accommodation">
-                <p>{location.tags}</p>
-              </div>
-              <div className="tag-accommodation">
-                <p>{location.tags}</p>
-              </div>
+              {location.tags.map((element) => (
+                <div className="tag-accommodation">
+                  <p>{element}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="fiche-accommodation">
             <div className="identity-accommodation">
-              <div className="proprio-accommodation">Alexandre Dumas</div>
-              <div className="photo-accommodation"></div>
+              <div className="proprio-accommodation">{location.host.name}</div>
+              <div className="photo-accommodation">
+                <img src={location.host.picture} alt="propriétaire" />
+              </div>
             </div>
 
             <div className="ratings-accommodation">
@@ -118,7 +99,7 @@ function Accommodation() {
               title={
                 <h2 className="title-collapse-accommodation">Description</h2>
               }
-              content={<p>{valueDescription}</p>}
+              content={<p>{location.description}</p>}
             />
           </div>
           <div className="equipment-accommodation">
@@ -129,7 +110,13 @@ function Accommodation() {
               title={
                 <h2 className="title-collapse-accommodation">Équipements</h2>
               }
-              content={<p>{valueEquipement}</p>}
+              content={
+                <ul>
+                  {location.equipments.map((element) => (
+                    <li>{element}</li>
+                  ))}
+                </ul>
+              }
             />
           </div>
         </div>
