@@ -18,9 +18,6 @@
     height: 100%;
     object-fit: cover;
     border-radius: 25px;
-    /* mix-blend-mode: darken;
-    background: black;
-    opacity: 0.3;*/
     filter: brightness(0.5);
 }
 
@@ -28,7 +25,6 @@
     position: absolute;
     color: #ffffff;
     left: 26%;
-    right: 26%;
     top: 35%;
     font-family: 'Montserrat';
     font-style: normal;
@@ -46,8 +42,8 @@
     .Banner-title {
         font-size: 24px;
         left: 4%;
-        right: 45%;
-        top: 20%;
+        right: 37%;
+        top: 23%;
     }
 
     .Banner-container {
