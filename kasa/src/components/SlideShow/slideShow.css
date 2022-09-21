@@ -46,7 +46,15 @@ img.active {
 .left,
 .right {
     display: flex;
-    height: fit-content;
     position: absolute;
+    height: fit-content;
     top: 40%;
+}
+
+.indexSlide {
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    color: white;
 }

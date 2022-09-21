@@ -17,8 +17,8 @@ const Arrow = (props) => (
 export default function SlideShow({ pictures }) {
   const [currentPicture, setCurrentPicture] = useState('')
   useEffect(() => setCurrentPicture(pictures[0]), [pictures])
+  const index = pictures.findIndex((element) => element === currentPicture)
   function nextSlide() {
-    const index = pictures.findIndex((element) => element === currentPicture)
     if (pictures.length - 1 === index) {
       setCurrentPicture(pictures[0])
     } else {
@@ -27,7 +27,6 @@ export default function SlideShow({ pictures }) {
   }
 
   function previousSlide() {
-    const index = pictures.findIndex((element) => element === currentPicture)
     if (index === 0) {
       setCurrentPicture(pictures[pictures.length - 1])
     } else {
@@ -44,8 +43,15 @@ export default function SlideShow({ pictures }) {
         <div className="btn-nav left">
           <Arrow onClick={previousSlide} />
         </div>
+
         <div className="btn-nav right">
           <Arrow onClick={nextSlide} />
+        </div>
+
+        <div className="indexSlide">
+          <p>
+            {[index + 1]}/{pictures.length}
+          </p>
         </div>
       </div>
     </>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-// import { useParams, redirect } from 'react-router-dom'
 import Collapse from '../../components/Collapse/Collapse'
 import SlideShow from '../../components/SlideShow/SlideShow'
 import './accommodation.css'
@@ -42,6 +41,62 @@ function Accommodation() {
     getDatas()
   }, [id, navigate])
 
+  function StarDisplay() {
+    switch (location.rating) {
+      case '1':
+        return (
+          <div className="rating-accommodation">
+            <Star fill="#FF6060" />
+            <Star fill="#E3E3E3" />
+            <Star fill="#E3E3E3" />
+            <Star fill="#E3E3E3" />
+            <Star fill="#E3E3E3" />
+          </div>
+        )
+
+      case '2':
+        return (
+          <div className="rating-accommodation">
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#E3E3E3" />
+            <Star fill="#E3E3E3" />
+            <Star fill="#E3E3E3" />
+          </div>
+        )
+      case '3':
+        return (
+          <div className="rating-accommodation">
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#E3E3E3" />
+            <Star fill="#E3E3E3" />
+          </div>
+        )
+      case '4':
+        return (
+          <div className="rating-accommodation">
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#E3E3E3" />
+          </div>
+        )
+      case '5':
+        return (
+          <div className="rating-accommodation">
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+            <Star fill="#FF6060" />
+          </div>
+        )
+    }
+  }
+
   return (
     <div className="container">
       <div className="slide-container">
@@ -64,7 +119,7 @@ function Accommodation() {
             <div className="tags-accommodation">
               {location.tags.map((element) => (
                 <div className="tag-accommodation">
-                  <p>{element}</p>
+                  <p key={element}>{element}</p>
                 </div>
               ))}
             </div>
@@ -78,15 +133,7 @@ function Accommodation() {
               </div>
             </div>
 
-            <div className="ratings-accommodation">
-              <div className="rating-accommodation">
-                <Star fill="#FF6060" />
-                <Star fill="#FF6060" />
-                <Star fill="#FF6060" />
-                <Star fill="#E3E3E3" />
-                <Star fill="#E3E3E3" />
-              </div>
-            </div>
+            <div className="ratings-accommodation">{StarDisplay()}</div>
           </div>
         </div>
 
@@ -113,7 +160,7 @@ function Accommodation() {
               content={
                 <ul>
                   {location.equipments.map((element) => (
-                    <li>{element}</li>
+                    <li key={element}>{element}</li>
                   ))}
                 </ul>
               }
