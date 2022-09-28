@@ -51,6 +51,11 @@ img.active {
     top: 40%;
 }
 
+.left.noSlide,
+.right.noSlide {
+    display: none;
+}
+
 .indexSlide {
     display: flex;
     position: absolute;
@@ -61,7 +66,6 @@ img.active {
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
     img.active {
-        height: 255px;
         width: 100%;
         border-radius: 10px;
     }
@@ -69,7 +73,6 @@ img.active {
     .left,
     .right {
         width: 11.67px;
-        top: 35%;
     }
 
     .indexSlide {
@@ -79,7 +82,6 @@ img.active {
 
 @media screen and (min-width: 426px) and (max-width: 1024px) {
     img.active {
-        height: 335px;
         width: 100%;
         border-radius: 25px;
     }
@@ -87,6 +89,5 @@ img.active {
     .left,
     .right {
         width: 25.67px;
-        top: 37%;
     }
 }

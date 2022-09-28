@@ -39,12 +39,14 @@ export default function SlideShow({ pictures }) {
         <div className="slider">
           <img src={currentPicture} className="active" alt="Bannière" />
         </div>
-
-        <div className="btn-nav left">
+        <div
+          className={`btn-nav left ${pictures.length === 1 ? 'noSlide' : ''}`}
+        >
           <Arrow onClick={previousSlide} />
         </div>
-
-        <div className="btn-nav right">
+        <div
+          className={`btn-nav right ${pictures.length === 1 ? 'noSlide' : ''}`}
+        >
           <Arrow onClick={nextSlide} />
         </div>
 
