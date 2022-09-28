@@ -78,8 +78,13 @@
     margin-top: 24px;
 }
 
-.rating-accommodation svg {
+.ratings-accommodation .fa-star path {
     margin-left: 10px;
+    fill: grey !important;
+}
+
+.ratings-accommodation .fa-star.full path {
+    fill: #FF6060 !important;
 }
 
 .body-accommodation {

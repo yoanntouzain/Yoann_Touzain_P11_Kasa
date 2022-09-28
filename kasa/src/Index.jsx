@@ -17,14 +17,19 @@ import Error from './pages/Error/Error'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
-  <BrowserRouter>
-    <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="Accommodation/:id" element={<Accommodation />} />
-      <Route path="/A_Propos" element={<About />} />
-      <Route path="*" element={<Error />} />
-    </Routes>
-    <Footer />
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="Accommodation/:id"
+          element={<Accommodation key="accommodation" />}
+        />
+        <Route path="/A_Propos" element={<About />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  </React.StrictMode>
 )
