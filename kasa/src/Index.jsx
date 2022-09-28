@@ -22,7 +22,10 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="Accommodation/:id" element={<Accommodation />} />
+        <Route
+          path="Accommodation/:id"
+          element={<Accommodation key="accommodation" />}
+        />
         <Route path="/A_Propos" element={<About />} />
         <Route path="*" element={<Error />} />
       </Routes>

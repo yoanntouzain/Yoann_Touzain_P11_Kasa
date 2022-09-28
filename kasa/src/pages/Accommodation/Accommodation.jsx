@@ -4,18 +4,20 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Collapse from '../../components/Collapse/Collapse'
 import SlideShow from '../../components/SlideShow/SlideShow'
 import './accommodation.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
-const Star = (props) => (
-  <svg
-    width="30"
-    height="30"
-    viewBox="0 0 30 30"
-    fill={props.fill}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" />
-  </svg>
-)
+// const Star = (props) => (
+//   <svg
+//     width="30"
+//     height="30"
+//     viewBox="0 0 30 30"
+//     fill={props.fill}
+//     xmlns="http://www.w3.org/2000/svg"
+//   >
+//     <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" />
+//   </svg>
+// )
 
 function Accommodation() {
   const { id } = useParams()
@@ -27,6 +29,7 @@ function Accommodation() {
     equipments: [],
   })
 
+  const [rating, setRating] = useState([])
   useEffect(() => {
     async function getDatas() {
       let result = await fetch('/logement.json')
@@ -34,74 +37,19 @@ function Accommodation() {
       let searchLocation = data.find((element) => element.id === id)
       if (searchLocation !== undefined) {
         setLocation(searchLocation)
+        let array = []
+        for (let index = 1; index <= 5; index++) {
+          if (index <= searchLocation.rating) {
+            array.push(true)
+          } else array.push(false)
+        }
+        setRating(array)
       } else {
         navigate('/error')
       }
     }
     getDatas()
   }, [id, navigate])
-
-  function StarDisplay() {
-    switch (location.rating) {
-      case '1':
-        return (
-          <div className="rating-accommodation">
-            <Star fill="#FF6060" />
-            <Star fill="#E3E3E3" />
-            <Star fill="#E3E3E3" />
-            <Star fill="#E3E3E3" />
-            <Star fill="#E3E3E3" />
-          </div>
-        )
-
-      case '2':
-        return (
-          <div className="rating-accommodation">
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#E3E3E3" />
-            <Star fill="#E3E3E3" />
-            <Star fill="#E3E3E3" />
-          </div>
-        )
-      case '3':
-        return (
-          <div className="rating-accommodation">
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#E3E3E3" />
-            <Star fill="#E3E3E3" />
-          </div>
-        )
-      case '4':
-        return (
-          <div className="rating-accommodation">
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#E3E3E3" />
-          </div>
-        )
-      case '5':
-        return (
-          <div className="rating-accommodation">
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-            <Star fill="#FF6060" />
-          </div>
-        )
-      default:
-        return (
-          <div className="rating-accommodation">
-            <p>No ratings</p>
-          </div>
-        )
-    }
-  }
 
   return (
     <div className="container">
@@ -139,13 +87,22 @@ function Accommodation() {
               </div>
             </div>
 
-            <div className="ratings-accommodation">{StarDisplay()}</div>
+            <div className="ratings-accommodation">
+              {Object.entries(rating).map(([index, star]) => (
+                <FontAwesomeIcon
+                  key={'star' + index}
+                  icon={faStar}
+                  className={star ? 'full' : ''}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="body-accommodation">
           <div className="description-accommodation">
             <Collapse
+              key="description"
               classNameContainer="collapse-container-accommodation"
               classNameHeader="collapse-header-accommodation"
               classNameCustoms="collapse-content-accommodation"
@@ -158,6 +115,7 @@ function Accommodation() {
           </div>
           <div className="equipment-accommodation">
             <Collapse
+              key="équipement"
               classNameContainer="collapse-container-accommodation"
               classNameHeader="collapse-header-accommodation"
               classNameCustoms="collapse-content-accommodation"
