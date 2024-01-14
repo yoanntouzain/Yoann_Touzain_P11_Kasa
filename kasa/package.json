@@ -40,10 +40,5 @@
     ]
   },
   "main": "index.js",
-  "license": "MIT",
-  "packageManager": "yarn@4.0.0",
-  "type": "commonjs",
-  "bin": {
-    "my-bin": ".dist/my-bin.js"
-  }
+  "license": "MIT"
 }
